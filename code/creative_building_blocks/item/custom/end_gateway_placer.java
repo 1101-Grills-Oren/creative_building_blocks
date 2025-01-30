@@ -15,8 +15,8 @@ import net.minecraft.world.World;
 import com.example.docs.component.ModComponents;
 
 //::1
-public class CounterItem extends Item {
-	public CounterItem(Settings settings) {
+public class EndGateway extends Item {
+	public EndGateway(Settings settings) {
 		super(settings);
 	}
 
@@ -31,10 +31,10 @@ public class CounterItem extends Item {
 		if (world.isClient()) {
 			return ActionResult.SUCCESS;
 		}
-    //Get the server
-    CommandManager commandManager = World.getCommandManager();
-    // `player` can be anything that can issue commands (i.e. a `CommandSource`)
-    commandManager.execute(player, "execute at @s rotated as @s align @s eyes run function creative_building_blocks:place_end_gateway/raytrace");
+    		//Get the server
+    		CommandManager commandManager = World.getCommandManager();
+    		// `player` can be anything that can issue commands (i.e. a `CommandSource`)
+    		commandManager.execute(player, "execute at @s rotated as @s align @s eyes run function creative_building_blocks:place_end_gateway/raytrace");
 		return ActionResult.SUCCESS;
 	}
 
