@@ -31,11 +31,10 @@ public class CounterItem extends Item {
 		if (world.isClient()) {
 			return ActionResult.SUCCESS;
 		}
-
-		// Read the current count and increase it by one
-		int count = stack.getOrDefault(ModComponents.CLICK_COUNT_COMPONENT, 0);
-		stack.set(ModComponents.CLICK_COUNT_COMPONENT, ++count);
-
+    //Get the server
+    CommandManager commandManager = World.getCommandManager();
+    // `player` can be anything that can issue commands (i.e. a `CommandSource`)
+    commandManager.execute(player, "execute at @s rotated as @s align @s eyes run function creative_building_blocks:place_end_gateway/raytrace");
 		return ActionResult.SUCCESS;
 	}
 
@@ -43,12 +42,12 @@ public class CounterItem extends Item {
 
 	@Override
 	//::3
-	public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+	/*public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
 		if (stack.contains(ModComponents.CLICK_COUNT_COMPONENT)) {
 			int count = stack.get(ModComponents.CLICK_COUNT_COMPONENT);
 			tooltip.add(Text.translatable("item.fabric-docs-reference.counter.info", count).formatted(Formatting.GOLD));
 		}
-	}
+	}*/
 
 	//::3
 
