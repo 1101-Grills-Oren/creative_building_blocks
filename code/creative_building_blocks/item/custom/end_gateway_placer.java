@@ -40,7 +40,7 @@ public class EndGateway extends Item {
 
 	//::2
 
-	@Override
+	//@Override
 	//::3
 	/*public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
 		if (stack.contains(ModComponents.CLICK_COUNT_COMPONENT)) {
