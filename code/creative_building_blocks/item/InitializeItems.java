@@ -21,23 +21,20 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 
-import com.example.docs.FabricDocsReference;
-import com.example.docs.item.armor.GuiditeArmorMaterial;
-import com.example.docs.item.custom.LightningStick;
-import com.example.docs.item.tool.GuiditeMaterial;
+import com.example.docs.item.custom.end_gateway_placer;
 
 // :::1
 public class ModItems {
 	// :::1
 
 	// :::6
-	public static final Item END_GATEWAY_PLACER = register(new ArmorItem(GuiditeArmorMaterial.INSTANCE, ArmorItem.Type.HELMET, new Item.Settings()), "end_gateway_placer");
+	public static final Item END_GATEWAY_PLACER = register(new end_gateway_placer(new FabricItemSettings()), "end_gateway");
 	// :::7
 	// :::9
-	public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(FabricDocsReference.MOD_ID, "item_group"));
+	public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(FabricDocsReference.MOD_ID, "creative_building_blocks"));
 	public static final ItemGroup CUSTOM_ITEM_GROUP = FabricItemGroup.builder()
 			.icon(() -> new ItemStack(ModItems.END_GATEWAY_PLACER))
-			.displayName(Text.translatable("itemGroup.fabric_docs_reference"))
+			.displayName(Text.translatable("itemGroup.creative_building_blocks"))
 			.build();
 	// :::9
 
@@ -64,14 +61,14 @@ public class ModItems {
 
 		// :::4
 
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
-				.register((itemGroup) -> {
-					itemGroup.add(ModItems.GUIDITE_HELMET);
-				});
+		//ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
+		//		.register((itemGroup) -> {
+		//			itemGroup.add(ModItems.GUIDITE_HELMET);
+		//		});
 
 		// :::8
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
-				.register((itemGroup) -> itemGroup.add(ModItems.GUIDITE_SWORD));
+		//ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
+		//		.register((itemGroup) -> itemGroup.add(ModItems.GUIDITE_SWORD));
 		// :::8
 
 		// :::_12
